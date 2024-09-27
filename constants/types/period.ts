@@ -30,6 +30,20 @@ class Period implements IPeriod {
             this.days = parseInt(periodArray.split("D")[0].split("M")[1]);
         }
     }
+
+    toString(): string {
+        let stringArray: string[] = []
+        if(this.years !== 0){
+            stringArray.push(`${this.years}Y`)
+        }
+        if(this.months !== 0){
+            stringArray.push(`${this.months}M`)
+        }
+        if(this.days !== 0){
+            stringArray.push(`${this.days}D`)
+        }
+        return stringArray.join("")
+    }
 }
 
 Date.prototype.before = function(date: Date): boolean {
